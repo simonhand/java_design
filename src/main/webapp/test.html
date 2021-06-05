@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="./js/jquery-1.12.4.js"></script>
+<script>
+    function sendMessage() {
+        var BtnF = document.getElementById("buttonfield");
+        var LblType = document.getElementById("type");
+        var Sle = document.getElementById("select");
+        var LblName = document.getElementById("name");
+        var TxbFName = document.getElementById("inputFName")
+        if (TxbFName.value !== "") {
+            var type = Sle.value;
+            var name =TxbFName.value;
+            var para = "type=" + type + "&name=" + name;//要传到后台的数据
+            var url = "server1.ashx";
+            $.post(url+para,(data)=>{
+                if(data == '0'){//dat等于什么要看服务器response.data成功时响应体时什么
+
+                }else{//这里发生错误的处理方式
+
+                }
+            })
+
+        }
+    }
+
+</script>
+</body>
+</html>
